@@ -1,0 +1,8 @@
+#detailed-forecast-list {
+    list-style: none;
+    padding: 1.2rem;
+}
+
+#detailed-forecast-list li {
+    padding-bottom: 2.5px;
+}
