@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    
+    <link rel="stylesheet" href="./assets/css/style.css">
+    <title>Weather Dashboard</title>
+</head>
+<body>
+    <header id="head-banner">
+        <div id="heading-container"class="d-flex">
+            <H1 id="dashboard-h1">Weather Dashboard</H1>
+        </div>
+    </header>
+
+    <section id="city-search">
+        <h2 id="search-heading">Search for a City:</h2>
+        <form action="/action_page.php">
+            <label for="city"></label>
+            <input type="text" id="city" name="fname"><br><br>
+            <input type="submit" value="Search">
+          </form>
+    </section>
+    <hr>
+    <section id="search-history">
+        <!--Dynamically populated with cities from search 
+       history -->
+        <ul id="history-list">
+
+
+
+
+        </ul>
+    </section>
+
+    <!--Detailed weather section(covers one day)-->
+    <section id="detailed-forecast">
+        <h2 id="detailed-weather-heading"></h2>
+    <!--ul will contain: temp, wind, humidity, and uv index-->
+        <ul id="detailed-forecast-list">
+
+
+
+    </ul>
+    </section>
+    <!--5 day forecast section-->
+
+    <section id="5-day-forecast">
+        <h3 id="5-day-forecast-heading">5-Day Forecast</h3>
+        <div class="" id="forecaste-container">
+            <div id="day-one"></div>
+            <div id="day-two"></div>
+            <div id="day-three"></div>
+            <div id="day-four"></div>
+            <div id="day-five"></div>
+        </div>
+    </section>
+
+    
+
+
+    <script src="./assets/js/index.js"></script>
+</body>
+</html>
