@@ -2,6 +2,11 @@
 var detailedUi = document.getElementById("detailed-forecast-list");
 var fiveDay = []; 
 
+function createFiveDayEls () {
+
+};
+
+
 //function to populate 5 day forecast html elements
 function populateFiveDayForecast(obj) {
 let dailyWeather = obj.daily;
@@ -18,7 +23,18 @@ for (i = 0; i < dailyWeather.length; i++) {
    'humidity': humidity,
   });
 fiveDay.push(forecast);
-forecast = {};console.log();
+// let div = document.createElement('div'); 
+// div.setAttribute('id', 'fiveDayContainer');
+let ul = document.createElement('ul'); 
+ul.setAttribute('id', 'fiveDayList');
+let fiveDayDivs = ['day-one', 'day-two', 'day-three', 'day-four', 'day-five'];
+for (i = 0; )
+
+let container = document.getElementById('fiveDayContainer');
+container.appendChild('ul');
+
+//empties forecast obj before iterating over the next obj in the 'daily' arr
+forecast = {};
 };
 
 
@@ -33,9 +49,6 @@ function generateDetailedListItem(text) {
 
 
 function detailedForecast(obj){
-let li = document.createElement('li'); 
-//let append = detailedUl.appendChild('li'); 
-
 for (var [key, value] of Object.entries(forecastObj)) {
     let prop = `${key}: ${value}`;
 detailedUi.appendChild(generateDetailedListItem(prop));
