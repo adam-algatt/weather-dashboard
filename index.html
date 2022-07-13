@@ -4,7 +4,6 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    
     <link rel="stylesheet" href="./assets/css/style.css">
     <title>Weather Dashboard</title>
 </head>
@@ -14,15 +13,9 @@
             <H1 id="dashboard-h1">Weather Dashboard</H1>
         </div>
     </header>
+    <input id="autocomplete" placeholder="Enter a place" type="text"/>
 
-    <section id="city-search">
-        <h2 id="search-heading">Search for a City:</h2>
-        <form action="/action_page.php">
-            <label for="city"></label>
-            <input type="text" id="city" name="fname"><br><br>
-            <input type="submit" value="Search">
-          </form>
-    </section>
+
     <hr>
     <section id="search-history">
         <!--Dynamically populated with cities from search 
@@ -61,6 +54,9 @@
     
 
 
-    <script src="./assets/js/index.js"></script>
+    <script type="module" src="./assets/js/index.js"></script>
+    <!-- <script type="text/javascript" src="https://maps.googleapis.com/maps/api/js?key=AIzaSyBcoIUvwmFIl9S54IsKszdFj6V0EQRPDH0&libraries=places"></script> -->
+    <!-- <script async defer src="https://maps.googleapis.com/maps/api/js?key=AIzaSyCn7Q43VrRhRhefia3wZ1_6x0rojYjMzeo&callback=initMap"></script> -->
+
 </body>
 </html>
