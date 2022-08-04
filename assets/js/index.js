@@ -1,8 +1,9 @@
 // const forecast = require('./Forecast'); 
 const searchForm = document.getElementById('city');
 let input = document.getElementById('autocomplete');
-// let autocomplete = new google.maps.places.Autocomplete(input, {types: ["geocode"]});
+let autocomplete = new google.maps.places.Autocomplete(input, {types: ["geocode"]});
 import { weatherData } from "./Weather.js";
+
 
 
 var detailedUi = document.getElementById("detailed-forecast-list");
@@ -93,21 +94,61 @@ var forecastObj = {};
 // .then(response => response.json())
 //    .then(data => console.log(data))//forecast(data));
 // };
+const searchHistory = $('#search-history');
+const historyList = $('#history-list');
 
-// autocomplete.addListener("place_changed", function() {
-//   let placeResult = autocomplete.getPlace();
-//   let name = placeResult.name;
-// let coord = {}; 
-//   // adds geographic coordinates from google autoselect location
-//   let location = placeResult.geometry.location;
-//   //tidying up returned data
-//   location = JSON.stringify({location})
-//   location = JSON.parse(location);
-// //making coords only one decimal place
-// coord.lat = location.location.lat.toFixed(1);
-// coord.lng = location.location.lng.toFixed(1);
+//click event for all saved weather li's
+searchHistory.on('click', 'li', function(e) {
+
+
+})
+
+function populateHistory(){
+
+// weatherStorage.forEach( weatherItem =>{
+//  let savedPlace = `<li class=${weatherItem.lng} id=${weatherItem.lat}>${weatherItem.name}</li>`
+//   historyList.append(savedPlace)
+// })
+
+}
+
+
+
+autocomplete.addListener("place_changed", function() {
+  let placeResult = autocomplete.getPlace();
+  let name = placeResult.name;
+let coord = {}; 
+
+  // adds geographic coordinates from google autoselect location
+  // let location = placeResult.geometry.location;
+  let location = placeResult.geometry.location;
+  console.log(name);
+
+  //tidying up returned data
+  location = JSON.stringify({location})
+  location = JSON.parse(location);
+
+//making coords only one decimal place
+coord.name = name;
+coord.lat = location.location.lat.toFixed(1);
+coord.lng = location.location.lng.toFixed(1);
+console.log(coord);
+let weatherStorage = JSON.parse(window.localStorage.getItem('weather')) || [];
+
+weatherStorage.push(coord);
+window.localStorage.setItem('weather', JSON.stringify(coord));
+// weatherStorage.sort((a, b) => {a.name - b.name});
+// weatherStorage.forEach( weatherItem =>{
+//   let savedPlace = `<li class=${weatherItem.lng} id=${weatherItem.lat}>${weatherItem.name}</li>`
+//    historyList.append(savedPlace)
+//  })
+
 // let url = `https://api.openweathermap.org/data/2.5/onecall?lat=${coord.lat}&lon=${coord.lng}&exclude=current,minutely,hourly,alerts&units=imperial&appid=d32ca2dfefb3211c96c727588cce960f`;
 // getWeatherData(url);
-// });
+});
+// populateHistory();
 
 populateFiveDayForecast(weatherData);
+// let transferScore = JSON.parse(window.localStorage.getItem('transfer')) || [];
+// transfer.push(score);
+// window.localStorage.setItem('transfer', JSON.stringify(score));
