@@ -1,0 +1,17 @@
+#detailed-forecast-list {
+    list-style: none;
+    padding: 1.2rem;
+}
+
+#detailed-forecast-list li {
+    padding-bottom: 2.5px;
+}
+
+#autocomplete {
+    height: 30px;
+    padding-left: 10px;
+    border-radius: 4px;
+    border: 1px solid rgb(186, 178, 178);
+    box-shadow: 0px 0px 12px #EFEFEF;
+    
+  }
